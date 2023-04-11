@@ -1,7 +1,52 @@
 .bg-green{
     background-color:#01fe6d;
   }
-  .text-green{
-    color:#01fe6d;
+.text-green{
+  color:#01fe6d;
+}
+.text-gray-700{
+  color:white;
+}
+ /* Media Query for low resolution  Tablets, Ipads */
+ @media (max-width: 481px) {
+ 
+  div>img{
+    max-width: 50%;
   }
+}
+ @media (min-width: 481px) and (max-width: 767px) {
   
+  div>img{
+    max-width: 50%;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+ 
+  div>img{
+    max-width: 50%;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+ 
+  div>img{
+    max-width: 80%;
+  }
+  section{
+    padding: 0 10%;
+  }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+ 
+  div>img{
+    max-width: 80%;
+  }
+  section{
+    padding: 0 10%;
+  }
+}
