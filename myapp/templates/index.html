@@ -14,15 +14,15 @@
   
 
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/main.png' %}" alt="My image" style="max-width:100%;">
+        <div class="w-1/2 lg:w-1/4 px-8 pr-8 pt-8">
+          <img  src="{% static 'img/main.png' %}" alt="My image" style="max-width:100%;" class="w-0 md:w-24 lg:w-32">
         </div>
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Научитесь создавать свои собственные игры' }}</h2>
-          <p class="text-lg mb-8">{{ 'Наша программа обучает детей программированию и разработке своих собственных игр с нуля. Мы охватываем все от проектирования персонажей до написания кода, необходимого для создания игры. С самыми юными программистами занимаемся на Scratch и Kodu Game Lab, c более опытными на Unity' }}</p>
+          <div class="text-lg mb-8">{{ 'Наша программа обучает детей программированию и разработке своих собственных игр с нуля. Мы охватываем все от проектирования персонажей до написания кода, необходимого для создания игры. С самыми юными программистами занимаемся на Scratch и Kodu Game Lab, c более опытными на Unity' }}</div>
           <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
         </div>
       </div>
@@ -31,117 +31,126 @@
   
 
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black pt-8">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Создайте личный сайт' }}</h2>
-          <p class="text-lg mb-8">{{ 'Обучим верстке сайта на HTML и CSS, также будем изучать JavaScript для создания Frontend, и Python вместе с PHP для разработки серверной части сайта. Предусмотрена работа с движками для создания сайта, такими как Wordpress' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
-        </div>
+          <div class="text-lg lg:mb-8">{{ 'Обучим верстке сайта на HTML и CSS, также будем изучать JavaScript для создания Frontend, и Python вместе с PHP для разработки серверной части сайта. Предусмотрена работа с движками для создания сайта, такими как Wordpress' }}</div>
+         </div>
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/web.png' %}" alt="My image">
+          <img  src="{% static 'img/web.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/desktop.png' %}" alt="My image">
+          <img  src="{% static 'img/desktop.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Разработайте приложения для компьютера' }}</h2>
-          <p class="text-lg mb-8">{{ 'Научим создавать кросплатформенные приложения, а также приложения для Windows ' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
-        </div>
+          <div class="text-lg lg:mb-8">{{ 'Научим создавать кросплатформенные приложения, а также приложения для Windows ' }}</div>
+         </div>
       </div>
     </div>
   </section>
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Изучите мир робототехники' }}</h2>
-          <p class="text-lg mb-8">{{ 'Окунитесь в мир робототехники! Создайте и запрограммируйте своего робота!' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
-        </div>
+          <div class="text-lg lg:mb-8">{{ 'Окунитесь в мир робототехники! Создайте и запрограммируйте своего робота!' }}</div>
+           </div>
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/robot.png' %}" alt="My image">
+          <img  src="{% static 'img/robot.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/AI.png' %}" alt="My image">
+          <img  src="{% static 'img/AI.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Узнайте, как устроены машинное обучение и нейронные сети' }}</h2>
-          <p class="text-lg mb-8">{{ 'Курс для самых опытных учеников, которые прошли предварительную подготовку. Изучим основные алгоритмы машинного обучения и обучим нейросеть под индивидуально выбранную задачу!' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
-        </div>
+          <div class="text-lg lg:mb-8">{{ 'Курс для самых опытных учеников, которые прошли предварительную подготовку. Изучим основные алгоритмы машинного обучения и обучим нейросеть под индивидуально выбранную задачу!' }}</div>
+          </div>
       </div>
     </div>
   </section>
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Изучайте аналитику данных ' }}</h2>
-          <p class="text-lg mb-8">{{ 'Для тех, кто прошел базовый курс по Python. Будем работать с большими массивами данных для решения бизнес задач!' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
-        </div>
+          <div class="text-lg lg:mb-8">{{ 'Для тех, кто прошел базовый курс по Python. Будем работать с большими массивами данных для решения бизнес задач!' }}</div>
+           </div>
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/AI.png' %}" alt="My image">
+          <img  src="{% static 'img/AI.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="text-white bg-black py-20">
+  <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/3D.png' %}" alt="My image">
+          <img  src="{% static 'img/3D.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Создавайте 3D-модели!' }}</h2>
-          <p class="text-lg mb-8">{{ 'Курс по работе в программе Blender, где мы научимся делать 3D модели, которые затем будем анимировать и украшать текстурами и шейдерами' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
+          <div class="text-lg lg:mb-8">{{ 'Курс по работе в программе Blender, где мы научимся делать 3D модели, которые затем будем анимировать и украшать текстурами и шейдерами' }}</div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-white bg-black">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap items-center">
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
+          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'О преподавателе' }}</h2>
+          <div class="text-lg lg:mb-8">{{ 'Занятия ведет педагог с десятилетним стажем Фахретдинов Наиль Ринатович.             Образование высшее по специальности информатика, постоянно в процессе обучения новым знаниям, в 2022 году получил Диплом МГТУ им. Баумана по Аналитике Данных на языке программирования Python. С учениками удается регулярно занимать призовые места по программированию и робототехнике.' }}</div>
+          </div>
+        <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
+          <img  src="{% static 'img/teacher/1.jpeg' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
       </div>
     </div>
   </section>
 
-
-  <section class="text-white bg-black py-20" id="feedback">
+  <section class="text-white bg-black" id="feedback">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Отзывы учеников и родителей' }}</h2>
-          <p class="text-lg mb-8">{{ 'Ознакомьтесь с большим количеством положительных отзывов о нашей школе программирования!' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
-        </div>
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/main.png' %}" alt="My image">
+          <img  src="{% static 'img/main.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
+        <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
+          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Отзывы учеников и родителей' }}</h2>
+          <div class="text-lg lg:mb-8">{{ 'Ознакомьтесь с большим количеством положительных отзывов о нашей школе программирования!' }}</div>
+           </div>
       </div>
     </div>
+
+
+
     <div id="default-carousel" class="relative mt-5" data-carousel="static">
       <!-- Carousel wrapper -->
-      <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+      <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 w-full">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
       <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-      <img src="{% static 'img/feedback/1.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+      <img src="{% static 'img/feedback/8.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
       </div>
       <!-- Item 2 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -165,7 +174,7 @@
       </div>
       <!-- Item 7 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/8.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+      <img src="{% static 'img/feedback/1.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
       </div>
       </div>
       <!-- Slider indicators -->
@@ -181,13 +190,13 @@
       <!-- Slider controls -->
       <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
       <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-      <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><divath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
       <span class="hidden">Previous</span>
       </span>
       </button>
       <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
       <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-      <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><divath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       <span class="hidden">Next</span>
       </span>
       </button>
@@ -195,23 +204,23 @@
   </section>
   
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-  <section class="text-white bg-black py-20" id="price">
+  <section class="text-white bg-black py-10" id="price">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
         <div class="w-full lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/main.png' %}" alt="My image">
+          <img  src="{% static 'img/header.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
         <div class="w-full lg:w-3/4 lg:pr-12 mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Цены на различные направления обучения' }}</h2>
-          <p class="text-lg mb-8">{{ 'Стоимость групповых занятий 3000 рублей в месяц. Индивидуальные по 750 рублей за урок, количество уроков по договоренности.' }}</p>
-          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">{{ 'Записаться' }}</a>
+          <div class="text-lg mb-8">{{ 'Стоимость групповых занятий 3000 рублей в месяц. Индивидуальные по 750 рублей за урок, количество уроков по договоренности.' }}</div>
+          <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full ">{{ 'Записаться' }}</a>
         </div>
       </div>
     </div>
   </section>
 
 
-  <section class="text-white bg-black py-20" id="contact">
+  <section class="text-white bg-black py-10" id="contact">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center justify-center bg-black text-white">
         <div class="w-full lg:w-1/2">
@@ -226,9 +235,9 @@
         </div>
         <div class="w-full lg:w-1/2">
           <h2 class="text-3xl font-bold mb-4">Свяжитесь с нами</h2>
-          <p class="mb-4">Если у вас есть какие-либо вопросы о нашей программе, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь и ответить на ваши вопросы. Можно написать в Telegram, WhatsApp, Viber по этому номеру телефона</p>
-          <p class="mb-4">Номер телефона: <a href="tel:+79527922316">+79527922316</a></p>
-          <p>Адрес: г. Калининград, ул. Тенистая аллея, д. 34, оф. 4</p>
+          <div class="mb-4">Если у вас есть какие-либо вопросы о нашей программе, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь и ответить на ваши вопросы. Можно написать в Telegram, WhatsApp, Viber по этому номеру телефона</div>
+          <div class="mb-4">Номер телефона: <a href="tel:+79527922316">+79527922316</a></div>
+          <div>Адрес: г. Калининград, ул. Тенистая аллея, д. 34, оф. 4</div>
         </div>
       </div>
     </div>
