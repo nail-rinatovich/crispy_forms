@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .carousel-container {
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 1;
+        }
+        .carousel-arrow-left {
+            left: 1rem;
+        }
+        .carousel-arrow-right {
+            right: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="carousel-container w-full relative">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="2.png" alt="Image 1" class="w-full">
+            </div>
+            <div class="carousel-slide">
+                <img src="3.png" alt="Image 2" class="w-full">
+            </div>
+            <div class="carousel-slide">
+                <img src="4.png" alt="Image 3" class="w-full">
+            </div>
+        </div>
+        <div class="carousel-arrow carousel-arrow-left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </div>
+        <div class="carousel-arrow carousel-arrow-right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </div>
+    </div>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const leftArrow = document.querySelector('.carousel-arrow-left');
+        const rightArrow = document.querySelector('.carousel-arrow-right');
+        let currentIndex = 0;
+
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        });
+
+        function updateCarousel() {
+            const translateX = -currentIndex * 100;
+            carousel.style.transform = `translateX(${translateX}%)`;
+        }
+    </script>
+</body>
+</html>

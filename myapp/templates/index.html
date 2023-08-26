@@ -151,48 +151,40 @@
 
 
    
-<div id="controls-carousel" class="relative w-full bg-black" data-carousel="static">
-  <!-- Carousel wrapper -->
-  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-       <!-- Item 1 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'img/feedback/2.png' %}" class="absolute block w-full lg:-translate-x-1/2 -translate-y-1/2 top-1/2 lg:left-1/2" alt="...">
-      </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-          <img src="{% static 'img/feedback/3.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'img/feedback/4.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'img/feedback/5.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div>
-      <!-- Item 5 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="{% static 'img/feedback/6.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div> 
-      <!-- Slider controls -->
-      <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-              </svg>
-              <span class="sr-only">Previous</span>
-          </span>
-      </button>
-      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-              </svg>
-              <span class="sr-only">Next</span>
-          </span>
-      </button>
-  </div>
- 
+  <div class="carousel-container w-full relative">
+    <div class="carousel">
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/2.png' %}" alt="Image 1" class="w-full">
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/3.png' %}" alt="Image 2" class="w-full">
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/4.png' %}" alt="Image 3" class="w-full">
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/5.png' %}" alt="Image 4" class="w-full">
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/6.png' %}" alt="Image 5" class="w-full">
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/7.png' %}" alt="Image 6" class="w-full">
+        </div>
+        <div class="carousel-slide">
+            <img src="{% static 'img/feedback/8.png' %}" alt="Image 7" class="w-full">
+        </div>
+    </div>
+    <div class="carousel-arrow carousel-arrow-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+            <path d="M15 18l-6-6 6-6" />
+        </svg>
+    </div>
+    <div class="carousel-arrow carousel-arrow-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+            <path d="M9 18l6-6-6-6" />
+        </svg>
+    </div>
 </div>
 
 
@@ -237,6 +229,28 @@
     </div>
   </section>
 
+  <script>
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const leftArrow = document.querySelector('.carousel-arrow-left');
+    const rightArrow = document.querySelector('.carousel-arrow-right');
+    let currentIndex = 0;
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    });
+
+    function updateCarousel() {
+        const translateX = -currentIndex * 100;
+        carousel.style.transform = `translateX(${translateX}%)`;
+    }
+</script>
 
 
 
