@@ -210,14 +210,16 @@
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center justify-center bg-black text-white">
         <div class="w-full lg:w-1/2">
+        <div class="contact">
           <h2 class="text-2xl font-bold mb-4 text-center">Данные для связи</h2>
           <form method="post" class="bg-black text-white p-6 rounded-lg">
             {% csrf_token %}
             {{ form|crispy }}
-            <button style="background-color:#01fe6d;" type="submit" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">
+            <button onclick="zayavka()" style="background-color:#01fe6d;" type="submit" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">
               Submit
             </button>
           </form>
+        </div>
         </div>
         <div class="w-full lg:w-1/2">
           <h2 class="text-3xl font-bold mb-4 text-center">Свяжитесь с нами</h2>
@@ -249,6 +251,15 @@
     function updateCarousel() {
         const translateX = -currentIndex * 100;
         carousel.style.transform = `translateX(${translateX}%)`;
+    }
+    function zayavka(){
+      if (document.querySelector("#id_Телефон").length == 12 || document.querySelector("#id_Телефон").length == 11){
+        
+        document.querySelector(".contact").innerHTML = "Ваша заявка успешно принята! "
+      }
+      else {
+        alert("Пожайлуйста, проверьте правильно ли введен телефон. Если ошибки нет, попробуйте записаться по телефону, а не через форму на сайте")
+      }
     }
 </script>
 
