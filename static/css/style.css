@@ -46,10 +46,10 @@
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
+       
 }
 .carousel-slide {
-  min-width: 100%;
-  flex-shrink: 0;
+  flex: 0 0 100%; /* Adjust this value based on the number of slides */
   position: relative;
 }
 .carousel-arrow {
