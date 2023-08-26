@@ -18,7 +18,7 @@
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
         <div class="w-1/2 lg:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/main.png' %}" alt="My image" style="max-width:100%;" class="w-0 md:w-24 lg:w-32">
+          <img  src="{% static 'img/games.png' %}" alt="My image" style="max-width:100%;" class="w-0 md:w-24 lg:w-32">
         </div>
         <div class="w-full lg:w-3/4 lg:pr-12 lg:mb-8 px-3">
           <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Научитесь создавать свои собственные игры' }}</h2>
@@ -144,66 +144,60 @@
 
 
 
-    <div id="default-carousel" class="relative mt-5" data-carousel="static">
-      <!-- Carousel wrapper -->
-      <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 w-full">
-      <!-- Item 1 -->
+    
+  </section>
+ 
+
+
+
+   
+<div id="controls-carousel" class="relative w-full bg-black" data-carousel="static">
+  <!-- Carousel wrapper -->
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-      <img src="{% static 'img/feedback/8.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+          <img src="{% static 'img/feedback/2.png' %}" class="absolute block w-full lg:-translate-x-1/2 -translate-y-1/2 top-1/2 lg:left-1/2" alt="...">
       </div>
       <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/2.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+          <img src="{% static 'img/feedback/3.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/3.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+          <img src="{% static 'img/feedback/4.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 4 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/4.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+          <img src="{% static 'img/feedback/5.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 5 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/6.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-      </div>
-      <!-- Item 6 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/7.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-      </div>
-      <!-- Item 7 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="{% static 'img/feedback/1.png' %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-      </div>
-      </div>
-      <!-- Slider indicators -->
-      <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="3"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="4"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="5"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="6"></button>
-      </div>
+          <img src="{% static 'img/feedback/6.png' %}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+      </div> 
       <!-- Slider controls -->
-      <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-      <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><divath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-      <span class="hidden">Previous</span>
-      </span>
+      <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+              </svg>
+              <span class="sr-only">Previous</span>
+          </span>
       </button>
-      <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-      <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><divath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-      <span class="hidden">Next</span>
-      </span>
+      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+              </svg>
+              <span class="sr-only">Next</span>
+          </span>
       </button>
-      </div>
-  </section>
-  
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  </div>
+ 
+</div>
+
+
+
+
   <section class="text-white bg-black py-10" id="price">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
@@ -224,7 +218,7 @@
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center justify-center bg-black text-white">
         <div class="w-full lg:w-1/2">
-          <h2 class="text-2xl font-bold mb-4">Данные для связи</h2>
+          <h2 class="text-2xl font-bold mb-4 text-center">Данные для связи</h2>
           <form method="post" class="bg-black text-white p-6 rounded-lg">
             {% csrf_token %}
             {{ form|crispy }}
@@ -234,7 +228,7 @@
           </form>
         </div>
         <div class="w-full lg:w-1/2">
-          <h2 class="text-3xl font-bold mb-4">Свяжитесь с нами</h2>
+          <h2 class="text-3xl font-bold mb-4 text-center">Свяжитесь с нами</h2>
           <div class="mb-4">Если у вас есть какие-либо вопросы о нашей программе, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь и ответить на ваши вопросы. Можно написать в Telegram, WhatsApp, Viber по этому номеру телефона</div>
           <div class="mb-4">Номер телефона: <a href="tel:+79527922316">+79527922316</a></div>
           <div>Адрес: г. Калининград, ул. Тенистая аллея, д. 34, оф. 4</div>
