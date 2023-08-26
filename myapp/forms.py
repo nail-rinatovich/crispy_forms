@@ -7,7 +7,7 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ('Имя', 'Телефон', 'Email')
+        fields = ('Имя', 'Телефон')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
