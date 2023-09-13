@@ -253,9 +253,10 @@
         carousel.style.transform = `translateX(${translateX}%)`;
     }
     function zayavka(){
-      if (document.querySelector("#id_Телефон").length == 12 || document.querySelector("#id_Телефон").length == 11){
-        
+      if (document.querySelector("#id_Телефон").value.length == 12 || document.querySelector("#id_Телефон").value.length == 11){
+        alert("Мы позвоним вам по телефону " + document.querySelector("#id_Телефон").value + " в ближайшее время" )
         document.querySelector(".contact").innerHTML = "Ваша заявка успешно принята! "
+        
       }
       else {
         alert("Пожайлуйста, проверьте правильно ли введен телефон. Если ошибки нет, попробуйте записаться по телефону, а не через форму на сайте")
