@@ -132,4 +132,4 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-STATIC_ROOT = "/var/www/example.com/static/"
+STATIC_ROOT = "/var/www/script39_ru_usr/data/www/script39.ru/static/admin"
