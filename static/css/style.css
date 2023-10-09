@@ -5,9 +5,8 @@
   color:#01fe6d;
 }
 
-.text-gray-700{
-  color:white;
-}
+
+
  /* Media Query for low resolution  Tablets, Ipads */
  @media (max-width: 481px) {
  
@@ -30,6 +29,9 @@
   
   section{
     padding: 0 10%;
+  }
+  .container{
+    height: 15rem;
   }
 }
 
