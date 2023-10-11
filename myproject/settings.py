@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -34,7 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'http://127.0.0.1' , '*']
 # CSRF_TRUSTED_ORIGINS  = ['http://*.script39.ru/']
-
 # Application definition
 
 INSTALLED_APPS = [
