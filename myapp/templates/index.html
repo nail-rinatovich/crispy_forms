@@ -3,17 +3,6 @@
 {% block content %}
 {% load static %}
 
-  {% comment %} <form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Записаться</button>
-  </form> {% endcomment %}
-
- 
-
-  
-
-
   <section class="text-white bg-black">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
@@ -28,8 +17,6 @@
     </div>
   </section>
   
-
-
   <section class="text-white bg-black pt-8">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
@@ -139,17 +126,8 @@
           <div class="text-lg lg:mb-8"><p>{{ 'Ознакомьтесь с большим количеством положительных отзывов о нашей школе программирования!' }}</p></div>
            </div>
       </div>
-    </div>
-
-
-
-    
+    </div>    
   </section>
- 
-
-
-
-   
   <div class="carousel-container w-full relative lg:pt-8">
     <div class="carousel">
         <div class="carousel-slide">
@@ -186,9 +164,6 @@
     </div>
 </div>
 
-
-
-
   <section class="text-white bg-black py-10" id="price">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center">
@@ -203,35 +178,95 @@
       </div>
     </div>
   </section>
-
-
-  <section class="text-white bg-black py-10" id="contact" >
+  
+  <section class="text-white bg-black py-10" id="contact">
     <div class="container mx-auto">
-      <div class="flex flex-wrap items-center justify-center bg-black text-white">
-        <div class="w-full lg:w-1/2 md:w-1/2">
-        <div class="contact">
-          <h2 class="text-2xl font-bold mb-4 text-center">Данные для связи</h2>
-          <form method="post" class="bg-black p-6 rounded-lg" >
-            {% csrf_token %}
-            
-              
-            {{ form|crispy }}
-           
-            <button onclick="zayavka()" style="background-color:#01fe6d;" type="submit" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full">
-              Записаться
+        <div class="flex flex-wrap items-center justify-center bg-black text-white">
+            <div class="w-full lg:w-1/2 md:w-1/2">
+                <div class="contact">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Данные для связи</h2>
+                    <form id="contactForm" method="post" class="bg-black p-6 rounded-lg">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="bg-white hover:bg-green text-black hover:text-black font-bold py-3 px-8 rounded-full">
+                            Записаться
+                        </button>
+                    </form>
+                
+                    <!-- Modal -->
+                    <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden"  >
+                        <div class="flex items-center justify-center min-h-screen">
+                            <div class="modal bg-black text-white rounded-lg px-4 py-6" style="border: 3px solid #01fe6d;">
+                                <button id="closeModal" class="absolute top-2 right-2 text-white">&times;</button>
+                                <div id="modalContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- (Ваша вторая колонка для контактной информации) -->
+            <div class="w-full lg:w-1/2 md:w-1/2">
+              <h2 class="text-3xl font-bold mb-4 text-center">Свяжитесь с нами</h2>
+              <div class="mb-4"><p>Если у вас есть какие-либо вопросы о нашей программе, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь и ответить на ваши вопросы. Можно написать в Telegram, WhatsApp, Viber по этому номеру телефона</p></div>
+              <div class="mb-4">Номер телефона: <b><a class="text-green" href="tel:+79527922316">+79527922316</a></b></div>
+              <div>Адрес: г. Калининград, ул. Тенистая аллея, д. 34, оф. 4</div>
+            </div>
+          </div>
+        </div>
+    
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    const closeModalButton = document.getElementById('closeModal');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showModal('Ваша заявка отправлена, ожидайте :)');
+            } else {
+                showModal('Не удалось оставить заявку, проверьте, пожалуйста, номер телефона или запишитесь по телефону, либо через telegram / whatsapp ');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showModal('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
+        });
+    });
+
+    function showModal(message) {
+        modal.classList.remove('hidden');
+        modalContent.innerHTML = `
+            <p>${message}</p>
+            <button id="closeModalButton" class="mt-4 bg-green hover:bg-gray-400 text-black font-bold py-2 px-4 rounded">
+                Закрыть
             </button>
-          </form>
-        </div>
-        </div>
-        <div class="w-full lg:w-1/2 md:w-1/2">
-          <h2 class="text-3xl font-bold mb-4 text-center">Свяжитесь с нами</h2>
-          <div class="mb-4"><p>Если у вас есть какие-либо вопросы о нашей программе, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь и ответить на ваши вопросы. Можно написать в Telegram, WhatsApp, Viber по этому номеру телефона</p></div>
-          <div class="mb-4">Номер телефона: <b><a class="text-green" href="tel:+79527922316">+79527922316</a></b></div>
-          <div>Адрес: г. Калининград, ул. Тенистая аллея, д. 34, оф. 4</div>
-        </div>
-      </div>
-    </div>
-  </section>
+        `;
+
+        document.getElementById('closeModalButton').addEventListener('click', closeModal);
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+    }
+});
+</script>
+
+
   <script>
     document.querySelector("label").style.color = "white" 
     document.querySelector('#div_id_Телефон').children[0].style.color = 'white' 
@@ -257,25 +292,6 @@
         const translateX = -currentIndex * 100;
         carousel.style.transform = `translateX(${translateX}%)`;
     }
-    function zayavka(){
-      if (document.querySelector("#id_Телефон").value.length == 12 || document.querySelector("#id_Телефон").value.length == 11){
-        alert("Мы позвоним вам по телефону " + document.querySelector("#id_Телефон").value + " в ближайшее время" )
-        
-        
-      }
-      else {
-        alert("Пожайлуйста, проверьте правильно ли введен телефон. Если ошибки нет, попробуйте записаться по телефону, а не через форму на сайте")
-      }
-    }
+
 </script>
-
-
-
-  
-
-  
-  
-  
-  
-  
 {% endblock %}
