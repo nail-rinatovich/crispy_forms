@@ -1,3 +1,57 @@
+/* Mobile styles (up to 767px) */
+.description-container {
+  order: 3; /* Explicitly set to ensure it comes after title and image */
+}
+@media (max-width: 767px) {
+  .title-container, .image-container {
+    width: 100%;
+  }
+  
+  .img-responsive {
+    width: 100%; /* Full-width image */
+  }
+}
+
+/* Tablet and above (768px and up) */
+@media (min-width: 768px) {
+  /* For odd sections (image on the right) */
+  .section:nth-child(odd) .title-container {
+    order: 1; /* Title first */
+  }
+  
+  .section:nth-child(odd) .image-container {
+    order: 2; /* Image second */
+  }
+
+  /* For even sections (image on the left) */
+  .section:nth-child(even) .title-container {
+    order: 2; /* Title second */
+  }
+  
+  .section:nth-child(even) .image-container {
+    order: 1; /* Image first */
+  }
+
+  .title-container, .image-container {
+    width: 75%; /* 50% for title and image */
+  }
+  
+  .img-responsive {
+    width: 50%; /* Image takes full width of its container */
+  }
+}
+
+/* Desktop (1025px and above) */
+@media (min-width: 1025px) {
+  .title-container {
+    width: 75%; /* 75% width for title */
+  }
+
+  .image-container {
+    width: 50%; /* 25% width for image */
+  }
+}
+
 .bg-green{
     background-color:#01fe6d;
   }

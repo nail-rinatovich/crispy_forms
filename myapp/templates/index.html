@@ -3,130 +3,164 @@
 {% block content %}
 {% load static %}
 
-<section class="text-white bg-black pt-8">
+<section class="text-white bg-black pt-16 section">
   <div class="container mx-auto">
     <div class="flex flex-wrap items-center">
-      <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-        <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Программируй свою реальность, а не просто исследуй чужую!' }}</h2>
-        <div class="text-lg lg:mb-8"><p>{{ 'Изучайте программирование игр в Roblox и Maincraft, чтобы создавать свои миры, нарабатывая алгоритмическую базу для дальнейшего путешествия в мир программирования. Курс хорошо подойдет детям, знакомым с этими играми и поможет переключиться от пассивной роли игрока к роли создателя-программиста' }}</p></div>
-       </div>
-      <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-        <img  src="{% static 'img/minecraft.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
+      <!-- Title -->
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Программируй свою реальность, а не просто исследуй чужую!' }}</h2>
+      </div>
+      
+      <!-- Image -->
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/minecraft.png' %}" alt="My image" class="img-responsive">
+      </div>
+      
+      <!-- Description -->
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Изучайте программирование игр в Roblox и Minecraft, чтобы создавать свои миры, нарабатывая алгоритмическую базу для дальнейшего путешествия в мир программирования. Курс хорошо подойдет детям, знакомым с этими играми и поможет переключиться от пассивной роли игрока к роли создателя-программиста' }}</p>
       </div>
     </div>
   </div>
 </section>
-  <section class="text-white bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-1/2 lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/games.png' %}" alt="My image" style="max-width:100%;" class="w-0 md:w-24 lg:w-32">
-        </div>
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Научитесь создавать свои собственные игры' }}</h2>
-          <div class="text-lg"><p>{{ 'Наша программа обучает детей программированию и разработке своих собственных игр с нуля. Мы охватываем все от проектирования персонажей до написания кода, необходимого для создания игры. С самыми юными программистами занимаемся на Scratch и Kodu Game Lab, c более опытными на Unity' }}</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="text-white bg-black pt-8">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Создайте личный сайт' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Обучим верстке сайта на HTML и CSS, также будем изучать JavaScript для создания Frontend, и Python вместе с PHP для разработки серверной части сайта. Предусмотрена работа с движками для создания сайта, такими как Wordpress' }}</p></div>
-         </div>
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/web.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="text-white bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/desktop.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Разработайте приложения для компьютера' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Проходите компьютерные курсы, чтобы создавать кросплатформенные приложения, а также приложения для Windows ' }}</p></div>
-         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="text-white bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3 pt-8">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Изучите мир робототехники' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Окунитесь в мир робототехники! Создайте и запрограммируйте своего робота!' }}</p></div>
-           </div>
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/robot.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="text-white bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/AI.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
-        <div class="w-full lg:w-3/4  md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Узнайте, как устроены машинное обучение и нейронные сети' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Курс для самых опытных учеников, которые прошли предварительную подготовку. Изучим основные алгоритмы машинного обучения и обучим нейросеть под индивидуально выбранную задачу!' }}</p></div>
-          </div>
+<!-- Section 2: Even (Image on the left) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/games.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Научитесь создавать свои собственные игры' }}</h2>
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Наша программа обучает детей программированию и разработке своих собственных игр с нуля. Мы охватываем все от проектирования персонажей до написания кода, необходимого для создания игры. С самыми юными программистами занимаемся на Scratch и Kodu Game Lab, c более опытными на Unity' }}</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="text-white bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3 pt-8">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Изучайте аналитику данных ' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Для тех, кто прошел базовый курс по Python. Будем работать с большими массивами данных для решения бизнес задач!' }}</p></div>
-           </div>
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/AI.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
+<!-- Section 3: Odd (Image on the right) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green text-right pr-8">{{ 'Создайте личный сайт' }}</h2>
+      </div>
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/web.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Обучим верстке сайта на HTML и CSS, также будем изучать JavaScript для создания Frontend, и Python вместе с PHP для разработки серверной части сайта. Предусмотрена работа с движками для создания сайта, такими как Wordpress' }}</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="text-white bg-black">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/3D.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Создавайте 3D-модели!' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Курс по работе в программе Blender, где мы научимся делать 3D модели, которые затем будем анимировать и украшать текстурами и шейдерами' }}</p></div>
-          </div>
+<!-- Section 4: Even (Image on the left) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/desktop.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Разработайте приложения для компьютера' }}</h2>
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Проходите компьютерные курсы, чтобы создавать кроссплатформенные приложения, а также приложения для Windows' }}</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="text-white bg-black md:pb-8">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap items-center">
-        <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3 pt-8">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'О преподавателе' }}</h2>
-          <div class="text-lg lg:mb-8"><p>{{ 'Занятия ведет педагог с десятилетним стажем Фахретдинов Наиль Ринатович.             Образование высшее по специальности информатика, постоянно в процессе обучения новым знаниям, в 2022 году получил Диплом МГТУ им. Баумана по Аналитике Данных на языке программирования Python. С учениками удается регулярно занимать призовые места по программированию и робототехнике.' }}</p></div>
-          </div>
-        <div class="w-full lg:w-1/4 md:w-1/4 px-8 pr-8 pt-8">
-          <img  src="{% static 'img/teacher/1.jpeg' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
-        </div>
+<!-- Section 5: Odd (Image on the right) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green text-right pr-8">{{ 'Изучите мир робототехники' }}</h2>
+      </div>
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/robot.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Окунитесь в мир робототехники! Создайте и запрограммируйте своего робота!' }}</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Section 6: Even (Image on the left) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/AI.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Узнайте, как устроены машинное обучение и нейронные сети' }}</h2>
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Курс для самых опытных учеников, которые прошли предварительную подготовку. Изучим основные алгоритмы машинного обучения и обучим нейросеть под индивидуально выбранную задачу!' }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 7: Odd (Image on the right) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green text-right pr-8">{{ 'Изучайте аналитику данных' }}</h2>
+      </div>
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/AI.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Для тех, кто прошел базовый курс по Python. Будем работать с большими массивами данных для решения бизнес задач!' }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 8: Even (Image on the left) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/3D.png' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Создавайте 3D-модели!' }}</h2>
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p class="text-lg">{{ 'Курс по работе в программе Blender, где мы научимся делать 3D модели, которые затем будем анимировать и украшать текстурами и шейдерами' }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section 7: Odd (Image on the right) -->
+<section class="text-white bg-black pt-16 section">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <div class="title-container px-3 w-3/4">
+        <h2 class="text-3xl font-bold mb-6 text-green text-right pr-8">{{ 'О преподавателе' }}</h2>
+      </div>
+      <div class="image-container px-3 w-1/4">
+        <img src="{% static 'img/teacher/1.jpeg' %}" alt="My image" class="img-responsive">
+      </div>
+      <div class="w-full px-3 mt-4 description-container">
+        <p>{{ 'Занятия ведет педагог с десятилетним стажем Фахретдинов Наиль Ринатович. Образование высшее по специальности информатика, постоянно в процессе обучения новым знаниям, в 2022 году получил Диплом МГТУ им. Баумана по Аналитике Данных на языке программирования Python. С учениками удается регулярно занимать призовые места по программированию и робототехнике.' }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <section class="text-white bg-black lg:pb-6  md:pt-8" id="feedback">
     <div class="container mx-auto">
@@ -135,7 +169,7 @@
           <img  src="{% static 'img/main.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
         <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 lg:mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Отзывы учеников и родителей' }}</h2>
+          <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Отзывы учеников и родителей' }}</h2>
           <div class="text-lg lg:mb-8"><p>{{ 'Ознакомьтесь с большим количеством положительных отзывов о нашей школе программирования!' }}</p></div>
            </div>
       </div>
@@ -184,8 +218,8 @@
           <img  src="{% static 'img/header.png' %}" alt="My image" class="w-0 md:w-24 lg:w-32">
         </div>
         <div class="w-full lg:w-3/4 md:w-3/4 lg:pr-12 mb-8 px-3">
-          <h2 class="text-4xl font-bold mb-6 text-green">{{ 'Цены на различные направления обучения' }}</h2>
-          <div class="text-lg mb-8"><p>{{ 'Стоимость групповых занятий 500 рублей в час. Индивидуальные по 2000 рублей за 2 урока по 45 минут, количество уроков по договоренности.' }}</p></div>
+          <h2 class="text-3xl font-bold mb-6 text-green">{{ 'Цены на различные направления обучения' }}</h2>
+          <div class="text-lg mb-8"><p>{{ 'Стоимость групповых занятий 500 рублей в час. Индивидуальные по 2000 рублей за 2 урока по 45 минут, количество уроков по договоренности. Есть пробное занятие, которое оплачивается только в случае продолжения обучения на выбранном курсе' }}</p></div>
           <a href="./#contact" class="bg-green hover:bg-white text-black hover:text-black font-bold py-3 px-8 rounded-full ">{{ 'Записаться' }}</a>
         </div>
       </div>
