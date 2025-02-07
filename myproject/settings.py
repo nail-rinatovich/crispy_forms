@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['localhost', 'http://127.0.0.1' , '*']
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,44 @@ INSTALLED_APPS = [
     'crispy_forms',
     "crispy_tailwind",
 ]
+UNFOLD = {
+    "SITE_TITLE": "<SCRIPT> Admin",
+    "SITE_HEADER": "Панель администратора",
+    "SITE_URL": "/",  # Ссылка на ваш основной сайт
+    "COLORS": {
+        "primary": {
+            "50": "0 0 0",       # Черный фон
+            "100": "0 0 0",       # Дополнительный черный
+            "200": "34 34 34",    # Темно-серый для разделов
+            "300": "51 51 51",    # Границы или неактивные кнопки
+            "400": "0 255 0",     # Зеленый (яркий)
+            "500": "0 255 0",     # Основной зеленый
+            "600": "0 200 0",     # Темный зеленый
+            "700": "0 150 0",     # Очень темный зеленый
+            "800": "0 100 0",     # Зеленый акцент
+            "900": "0 50 0",      # Границы или эффекты
+        },
+        "text": {
+            "primary": "0 255 0",  # Зеленый текст
+            "secondary": "255 255 255",  # Белый текст
+            "muted": "128 128 128",  # Серый для подсказок
+        },
+        "background": {
+            "default": "0 0 0",  # Черный фон для админки
+            "card": "34 34 34",  # Темно-серый для карточек
+        },
+    },
+    "EXTENSIONS": {
+        "colors": True,
+        "shadows": True,  # Легкие тени для объемности
+    },
+    "FONT_FAMILY": "Courier New, monospace",  # Шрифт, похожий на основной стиль
+    "FONT_SIZE": {
+        "base": "16px",
+        "lg": "20px",
+        "xl": "24px",
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
