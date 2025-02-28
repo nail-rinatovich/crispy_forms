@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['localhost', 'http://127.0.0.1' , '*']
 # Application definition
 
 INSTALLED_APPS = [
-    'unfold',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,43 +48,84 @@ INSTALLED_APPS = [
     'crispy_forms',
     "crispy_tailwind",
 ]
-UNFOLD = {
-    "SITE_TITLE": "<SCRIPT> Admin",
-    "SITE_HEADER": "Панель администратора",
-    "SITE_URL": "/",  # Ссылка на ваш основной сайт
-    "COLORS": {
-        "primary": {
-            "50": "0 0 0",       # Черный фон
-            "100": "0 0 0",       # Дополнительный черный
-            "200": "34 34 34",    # Темно-серый для разделов
-            "300": "51 51 51",    # Границы или неактивные кнопки
-            "400": "0 255 0",     # Зеленый (яркий)
-            "500": "0 255 0",     # Основной зеленый
-            "600": "0 200 0",     # Темный зеленый
-            "700": "0 150 0",     # Очень темный зеленый
-            "800": "0 100 0",     # Зеленый акцент
-            "900": "0 50 0",      # Границы или эффекты
-        },
-        "text": {
-            "primary": "0 255 0",  # Зеленый текст
-            "secondary": "255 255 255",  # Белый текст
-            "muted": "128 128 128",  # Серый для подсказок
-        },
-        "background": {
-            "default": "0 0 0",  # Черный фон для админки
-            "card": "34 34 34",  # Темно-серый для карточек
-        },
+
+JAZZMIN_SETTINGS = {
+    "site_title": "SCRIPT Admin",
+    "site_header": "Панель администратора",
+    "site_brand": "SCRIPT Admin",
+    "welcome_sign": "Добро пожаловать в панель администратора",
+    "copyright": "SCRIPT",
+    "search_model": ["auth.User", "myapp.YourModel"],
+    "user_avatar": None,
+    
+    # Настройки тем
+    "show_ui_builder": True,  # Включаем конструктор интерфейса
+    "changeform_format": "horizontal_tabs",
+    "theme": "superhero",
+    "dark_mode_theme": "superhero",
+    
+    # Доступные темы
+    "themes": {
+        "light": "flatly",
+        "dark": "darkly",
+        "superhero": "superhero",
+        "cyborg": "cyborg",
+        "lux": "lux",
+        "solar": "solar",
+        "slate": "slate"
     },
-    "EXTENSIONS": {
-        "colors": True,
-        "shadows": True,  # Легкие тени для объемности
+    
+    # Настройка меню
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    
+    # Пользовательские иконки
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
     },
-    "FONT_FAMILY": "Courier New, monospace",  # Шрифт, похожий на основной стиль
-    "FONT_SIZE": {
-        "base": "16px",
-        "lg": "20px",
-        "xl": "24px",
+    
+    # Пользовательские ссылки
+    "custom_links": {
+        "myapp": [{
+            "name": "На сайт", 
+            "url": "/",
+            "icon": "fas fa-home"
+        }]
     },
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-lime",
+    "navbar": "navbar-dark",
+    "no_navbar_border": True,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "cyborg",
+    "dark_mode_theme": "cyborg",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
 }
 
 MIDDLEWARE = [
