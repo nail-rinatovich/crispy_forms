@@ -1,0 +1,8 @@
+Options +ExecCGI
+AddHandler wsgi-script .py
+RewriteCond %{HTTPS} !on 
+RewriteCond %{HTTP_HOST} ^script39.ru$ 
+RewriteRule ^(.*)$ https://script39.ru/$1 [R=301,L]
+RewriteEngine On
+RewriteCond %{index.wsgi} !-f
+RewriteRule ^(.*)$ /index.wsgi/$1 [QSA,PT,L]
