@@ -1,0 +1,117 @@
+server {
+    server_name script39.ru www.script39.ru;
+    listen 5.23.52.252:443 ssl;
+
+    ssl_certificate "/var/www/httpd-cert/script39.ru_2023-09-19-12-12_24.crt";
+    ssl_certificate_key "/var/www/httpd-cert/script39.ru_2023-09-19-12-12_24.key";
+
+    charset utf-8;
+    gzip on;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_types text/css text/xml application/javascript text/plain application/json image/svg+xml image/x-icon;
+    gzip_comp_level 1;
+
+    set $root_path /var/www/script39_ru_usr/data/www/script39.ru;
+    root $root_path;
+    disable_symlinks if_not_owner from=$root_path;
+
+    location / {
+        # proxy_pass http://127.0.0.1:81;
+        # proxy_redirect http://127.0.0.1:81/ /;
+        include /etc/nginx/proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+
+    location ~* ^.+\.(jpg|jpeg|gif|png|svg|js|css|mp3|ogg|mpeg|avi|zip|gz|bz2|rar|swf|ico|7z|doc|docx|map|ogg|otf|pdf|tff|tif|txt|wav|webp|woff|woff2|xls|xlsx)$ {
+        try_files $uri $uri/ @fallback;
+    }
+
+    location @fallback {
+        proxy_pass http://127.0.0.1:81;
+       # proxy_redirect http://127.0.0.1:81/ /;
+        proxy_redirect https://script39.ru/ /;
+	include /etc/nginx/proxy_params;
+    }
+    
+    location /sitemap.xml {
+    alias /var/www/script39_ru_usr/data/www/script39.ru/sitemap.xml;
+    }
+    include "/etc/nginx/fastpanel2-sites/script39_ru_usr/script39.ru.includes";
+    include /etc/nginx/fastpanel2-includes/*.conf;
+    error_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.error.log;
+    access_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.access.log;
+}
+server {
+    server_name script39.ru www.script39.ru;
+    listen 5.23.52.252:80;
+    return 301 https://script39.ru$request_uri;
+}
+
+#server {
+#    server_name script39.ru;
+#    listen 5.23.52.252:443;
+
+#    ssl_certificate "/var/www/httpd-cert/script39.ru_2023-09-19-12-12_24.crt";
+#    ssl_certificate_key "/var/www/httpd-cert/script39.ru_2023-09-19-12-12_24.key";
+
+#    charset utf-8;
+#    gzip on;
+#    gzip_proxied expired no-cache no-store private auth;
+#    gzip_types text/css text/xml application/javascript text/plain application/json image/svg+xml image/x-icon;
+#    gzip_comp_level 1;
+
+#    set $root_path /var/www/script39_ru_usr/data/www/script39.ru;
+#    root $root_path;
+#    disable_symlinks if_not_owner from=$root_path;
+
+#    location / {
+
+       # proxy_pass http://127.0.0.1:8000;
+       # proxy_redirect http://127.0.0.1:8000/ /;
+#        include /etc/nginx/proxy_params;
+       # proxy_pass https://unix:/var/www/script39_ru_usr/data/www/script39.ru/app.sock;
+#       proxy_pass http://unix:/run/gunicorn.sock;
+#   }
+
+
+##     location ~* ^.+\.(jpg|jpeg|gif|png|svg|js|css|mp3|ogg|mpeg|avi|zip|gz|bz2|rar|swf|ico|7z|doc|docx|map|ogg|otf|pdf|tff|tif|txt|wav|webp|woff|woff2|xls|xlsx|xml)$ {
+#        try_files $uri $uri/ @fallback;
+#    }
+
+#    location @fallback {
+#        proxy_pass http://127.0.0.1:81;
+#        proxy_redirect http://127.0.0.1:81/ /;
+#        include /etc/nginx/proxy_params;
+#    }
+
+#    include "/etc/nginx/fastpanel2-sites/script39_ru_usr/script39.ru.includes";
+#    include /etc/nginx/fastpanel2-includes/*.conf;
+#    error_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.error.log;
+#    access_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.access.log;
+#}
+
+
+#server {
+#    server_name script39.ru;
+
+#    listen 5.23.52.252:80;
+#    return 301 https://$host$request_uri;
+
+#    error_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.error.log;
+#    access_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.access.log;
+#}
+
+
+#server {
+#    server_name www.script39.ru;
+#    listen 5.23.52.252:80;
+#    listen 5.23.52.252:443 ssl;
+
+#    ssl_certificate "/var/www/httpd-cert/script39.ru_2023-09-19-12-12_24.crt";
+#    ssl_certificate_key "/var/www/httpd-cert/script39.ru_2023-09-19-12-12_24.key";
+
+#    return 301 $scheme://script39.ru$request_uri;
+
+#    error_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.error.log;
+#    access_log /var/www/script39_ru_usr/data/logs/script39.ru-frontend.access.log;
+#}

@@ -1,0 +1,1 @@
+gunicorn --bind "unix:/var/www/script39_ru_usr/data/www/script39.ru/app.sock" index.wsgi:application
