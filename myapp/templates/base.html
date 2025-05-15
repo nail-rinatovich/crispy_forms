@@ -16,7 +16,7 @@
   <meta property="og:title" content="Школа программирования и робототехники <SCRIPT>"/>
   <meta property="og:url" content="https://script39.ru/" />  <meta property="og:type" content="article" />
   <meta property="og:image" content="{% static 'img/header.png' %}"/>
-  <meta property="og:description" content="content="Компьютерные курсы в Калининграде, программирование в Калининграде, разработка приложений, создание игр, 3D моделирование, программируем на Python, JavaScript, C#, C++, Arduino, Scratch, Unity, Unreal Engine, ☎ Звоните! ⭐"/>
+  <meta property="og:description" content="Компьютерные курсы в Калининграде, программирование в Калининграде, разработка приложений, создание игр, 3D моделирование, программируем на Python, JavaScript, C#, C++, Arduino, Scratch, Unity, Unreal Engine, ☎ Звоните! ⭐"/>
   <meta property="og:site_name" content="SCRIPT"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,59 +129,90 @@
 
 <body>
   <header>
-    
     <nav class="bg-black">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex items-center">
-            <a href="#" class="text-white text-2xl font-bold"><img  src="{% static 'img/label.png' %}" alt="My image" style="max-width:200px;"></a>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-              <a href="./" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Направления</a>
-              <a href="#feedback" class="text-gray-300 hover:text-green block px-3 py-2 rounded-md text-base font-medium">Отзывы</a>
-              <a href="#price" class="text-gray-300 hover:text-green block px-3 py-2 rounded-md text-base font-medium">Цены</a>
-              <a href="#contact" class="text-gray-300 hover:text-green block px-3 py-2 rounded-md text-base font-medium">Контакты</a>
-              </div>
-            </div>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <button type="button" class="bg-black inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <!-- Icon when menu is closed. -->
-              <!-- Menu open: "hidden", Menu closed: "block" -->
-              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div class="w-full relative">
+          <!-- Мобильная шапка -->
+          <div class="block md:hidden w-full">
+            <button id="mobile-menu-button" type="button" class="text-green hover:text-white focus:outline-none focus:text-white absolute right-4 top-4 z-10">
+              <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+            </button>
+            <div class="flex flex-col items-center justify-center pt-2 pb-1">
+              <a href="./" class="w-full">
+                <h1 class="text-3xl font-bold text-green leading-tight text-center w-full max-w-full break-words" style="margin-bottom:0;">
+                  <span class="block md:inline">Школа</span><span class="hidden md:inline">&nbsp;</span><span class="block md:inline">программирования</span>
+                </h1>
+              </a>
+              <a href="./" class="mt-2 mx-auto h-16">
+                <img src="{% static 'img/label.png' %}" alt="Логотип SCRIPT" class="w-auto h-16 mx-auto">
+              </a>
+            </div>
+          </div>
+          <!-- Планшеты и ПК -->
+          <div class="hidden md:flex flex-row items-center justify-between w-full">
+            <div class="flex flex-row items-center flex-shrink-0">
+              <a href="./">
+                <h1 class="text-4xl lg:text-4xl xl:text-5xl font-bold text-green leading-tight text-left max-w-full xl:max-w-[800px] lg:max-w-[70vw] break-words mb-0">
+                  <span class="md:inline">Школа</span><span class="hidden md:inline">&nbsp;</span><span class="md:inline">программирования</span>
+                </h1>
+              </a>
+              <a href="./" class="ml-4 block h-20">
+                <img src="{% static 'img/label.png' %}" alt="Логотип SCRIPT" class="w-auto h-20">
+              </a>
+            </div>
+            <div class="xl:hidden flex items-center ml-auto">
+              <button id="mobile-menu-button" type="button" class="text-green hover:text-white focus:outline-none focus:text-white">
+                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
               </button>
-              </div>
-              </div>
-              </div>
-              <!-- Mobile menu, toggle classes based on menu state. -->
-              <div class="md:hidden" id="mobile-menu">
-              <div class="px-0 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="./" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Направления</a>
-              <a href="#feedback" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Отзывы</a>
-              <a href="#price" class="text-gray-300 hover:text-green block px-3 py-2 rounded-md text-base font-medium">Цены</a>
-              <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Контакты</a>
-              </div>
-              </div>
-              </nav>
-              <script>
-              const button = document.querySelector('button[aria-controls="mobile-menu"]');
-              const menu = document.getElementById('mobile-menu');
-              button.addEventListener('click', () => {
-              const expanded = button.getAttribute('aria-expanded') === 'true' || false;
-              button.setAttribute('aria-expanded', !expanded);
-              menu.classList.toggle('hidden');
-              });
-              </script>
-  
-    
-
-    
+            </div>
+            <div class="hidden xl:flex space-x-4 ml-auto">
+              <a href="./" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Направления</a>
+              <a href="#feedback" class="text-gray-300 hover:text-green px-3 py-2 rounded-md text-base font-medium">Отзывы</a>
+              <a href="#price" class="text-gray-300 hover:text-green px-3 py-2 rounded-md text-base font-medium">Цены</a>
+              <a href="#contact" class="text-gray-300 hover:text-green px-3 py-2 rounded-md text-base font-medium">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Мобильное меню -->
+      <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-6 transition-all duration-300 transform -translate-y-full invisible">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-white text-3xl focus:outline-none">&times;</button>
+        <a href="./" class="text-white text-2xl font-medium hover:text-green">Направления</a>
+        <a href="#feedback" class="text-white text-2xl font-medium hover:text-green">Отзывы</a>
+        <a href="#price" class="text-white text-2xl font-medium hover:text-green">Цены</a>
+        <a href="#contact" class="text-white text-2xl font-medium hover:text-green">Контакты</a>
+      </div>
+    </nav>
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      
+      function openMenu() {
+        mobileMenu.classList.remove('-translate-y-full', 'invisible');
+        mobileMenu.classList.add('translate-y-0', 'visible');
+      }
+      function closeMenu() {
+        mobileMenu.classList.add('-translate-y-full', 'invisible');
+        mobileMenu.classList.remove('translate-y-0', 'visible');
+      }
+      mobileMenuButton.addEventListener('click', openMenu);
+      mobileMenuClose.addEventListener('click', closeMenu);
+      // Закрытие по клику вне меню
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          closeMenu();
+        }
+      });
+      // Закрытие по клику на любую ссылку в мобильном меню
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    </script>
   </header>
   <main>
 {% block content%}
